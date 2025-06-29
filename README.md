@@ -17,6 +17,10 @@ or
 
 `go run main.go -mode=anonymous -target=<singular target or target file>`
 
+Important data will be logged to a file named `ftpspectr.log`
+
+![](https://i.ibb.co/DfnT2tct/2025-06-29-16-55.png)
+
 ## Future Todo
 
 - [ ] Implement modularity for user-supplied regexes to define what's sensitive
