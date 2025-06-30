@@ -25,4 +25,4 @@ Important data will be logged to a file named `ftpspectr.log`
 
 - [ ] Implement modularity for user-supplied regexes to define what's sensitive
 - [ ] Implement channels for handling multiple hosts at once for large-scale inspecting 
-- [ ] Log each file's contents, even if not sensitive
+- [x] Log each file's contents, even if not sensitive

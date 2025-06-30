@@ -36,11 +36,15 @@ func ListFiles(ipAddress string, username string, password string) {
 			if err != nil {
 				fmt.Println(err)
 			}
+			// Log file content even if there's no match
+			fileData := fmt.Sprintf("File Found - Target: %s Path: %s | Content %s", ipAddress, path, string(buf))
+			log.Info().Str("module", "FTP File Data").Msg(fileData)
+
 			// Print match if one is found
 			// TODO: Maybe download file if match is found & log it to a file too?
 			matchFound, content := ExamineContents(string(buf))
 			if matchFound == true {
-				matchLogData := fmt.Sprintf("Sensitive File Match found - Target: %s Path: %s | Content: %s", ipAddress, path, content)
+				matchLogData := fmt.Sprintf("Sensitive File Match Found - Target: %s Path: %s | Content: %s", ipAddress, path, content)
 				log.Info().Str("module", "FTP Sensitive File Found").Msg(matchLogData)
 				fmt.Printf("[+] Match found: Target: %s Path: %s | Content: %s\n", ipAddress, path, content)
 			}
