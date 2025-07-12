@@ -10,10 +10,13 @@ import (
 	"os"
 )
 
+// Will error out if no config file is passed with error: open: no such file or directory
+
 func main() {
 	target := flag.String("target", "", "Single target or new-line separated list of targets")
 	username := flag.String("username", "", "Single username or new-line separated list of usernames")
 	password := flag.String("password", "", "Single password or new-line separated list of passwords")
+	config := flag.String("config", "", "YAML configuration file with patterns")
 	// Operating modes: anonymous, spray (username & password file)
 	mode := flag.String("mode", "anonymous", "Mode to operate in: Anonymous login or user-supplied creds")
 	flag.Parse()
@@ -26,6 +29,7 @@ func main() {
 	defer file.Close()
 	zerolog.TimeFieldFormat = time.RFC3339
 	log.Logger = zerolog.New(file).With().Timestamp().Logger()	
+
 	// Ensure target & mode are passed
 	if (*target != "") && (*mode != "") {
 		// Check if target input is a file or singular input
@@ -36,7 +40,7 @@ func main() {
 				// TODO: Implement channels instead
 				// anon login on each specified IP
 				for _, ip := range ips {
-					utilities.ListFiles(ip, "anonymous", "anonymous")
+					utilities.ListFiles(ip, "anonymous", "anonymous", *config)
 				}
 
 			} else if *mode == "spray" {
@@ -53,7 +57,7 @@ func main() {
 								for _, password := range passwords {
 									// Ensure username & password being used aren't empty
 									if (len(user) != 0) && (len(password) != 0) && (len(ip) != 0) {
-										utilities.ListFiles(ip, user, password)
+										utilities.ListFiles(ip, user, password, *config)
 									}
 								}
 							}
@@ -65,7 +69,7 @@ func main() {
 			// singular target passed, anon or pass spray mode 
 			if *mode == "anonymous" {
 				fmt.Println("[+] Anonymous mode against:", *target)
-				utilities.ListFiles(*target, "anonymous", "anonymous")
+				utilities.ListFiles(*target, "anonymous", "anonymous", *config)
 			} else if *mode == "spray" {
 				fmt.Println("[+] Pass spray mode against:", *target)
 				// Ensure username & password input passed
@@ -78,7 +82,7 @@ func main() {
 						for _, user := range users {
 							for _, password := range passwords {
 								if (len(user) != 0) && (len(password) != 0) {
-									utilities.ListFiles(*target, user, password)
+									utilities.ListFiles(*target, user, password, *config)
 								}
 							}
 						}

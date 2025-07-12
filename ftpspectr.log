@@ -1,0 +1,53 @@
+{"level":"info","module":"FTP Failed Login","time":"2025-06-29T21:08:32-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:08:32-07:00","message":"Login to 192.168.1.111 with testuser:ftpuser"}
+{"level":"info","module":"FTP Failed Login","time":"2025-06-29T21:08:35-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:08:35-07:00","message":"Login to 192.168.1.111 with root:ftpuser"}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:08:35-07:00","message":"Login to 192.168.1.111 with ftpuser:ftpuser"}
+{"level":"info","module":"FTP File Data","time":"2025-06-29T21:08:35-07:00","message":"File Found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content First Name,Last Name,SSN,Date of Birth,Email Address,Phone Number,Address\nJane,Doe,123-45-6789,1985-06-12,jane.doe@example.com,555-234-5678,123 Maple St, Springfield, IL 62704\nJohn,Smith,987-65-4321,1990-03-05,john.smith@example.com,555-123-4567,456 Oak Ave, Denver, CO 80203\nEmily,Johnson,321-54-9876,1978-11-20,emily.johnson@example.com,555-345-6789,789 Pine Rd, Austin, TX 73301\nMichael,Brown,654-32-1987,1982-09-17,michael.brown@example.com,555-987-6543,321 Cedar Blvd, Portland, OR 97205\nSarah,Davis,432-10-5678,1995-12-01,sarah.davis@example.com,555-876-5432,654 Birch Ln, Atlanta, GA 30303\n\n"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-06-29T21:08:35-07:00","message":"Sensitive File Match Found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content: 123-45-6789"}
+{"level":"info","module":"FTP File Data","time":"2025-06-29T21:08:35-07:00","message":"File Found - Target: 192.168.1.111 Path: /post.sh | Content wget ftp://root:Thi5isaGr8Passw0rd!@192.168.1.12\n"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-06-29T21:08:35-07:00","message":"Sensitive File Match Found - Target: 192.168.1.111 Path: /post.sh | Content: ftp://root"}
+{"level":"info","module":"FTP Failed Login","time":"2025-06-29T21:09:55-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:09:55-07:00","message":"Login to 192.168.1.111 with testuser:ftpuser"}
+{"level":"info","module":"FTP Failed Login","time":"2025-06-29T21:09:58-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:09:58-07:00","message":"Login to 192.168.1.111 with root:ftpuser"}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:09:58-07:00","message":"Login to 192.168.1.111 with ftpuser:ftpuser"}
+{"level":"info","module":"FTP File Data","time":"2025-06-29T21:09:58-07:00","message":"File Found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content First Name,Last Name,SSN,Date of Birth,Email Address,Phone Number,Address\nJane,Doe,123-45-6789,1985-06-12,jane.doe@example.com,555-234-5678,123 Maple St, Springfield, IL 62704\nJohn,Smith,987-65-4321,1990-03-05,john.smith@example.com,555-123-4567,456 Oak Ave, Denver, CO 80203\nEmily,Johnson,321-54-9876,1978-11-20,emily.johnson@example.com,555-345-6789,789 Pine Rd, Austin, TX 73301\nMichael,Brown,654-32-1987,1982-09-17,michael.brown@example.com,555-987-6543,321 Cedar Blvd, Portland, OR 97205\nSarah,Davis,432-10-5678,1995-12-01,sarah.davis@example.com,555-876-5432,654 Birch Ln, Atlanta, GA 30303\n\n"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-06-29T21:09:58-07:00","message":"Sensitive File Match Found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content: 123-45-6789"}
+{"level":"info","module":"FTP File Data","time":"2025-06-29T21:09:58-07:00","message":"File Found - Target: 192.168.1.111 Path: /post.sh | Content wget ftp://root:Thi5isaGr8Passw0rd!@192.168.1.12\n"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-06-29T21:09:58-07:00","message":"Sensitive File Match Found - Target: 192.168.1.111 Path: /post.sh | Content: ftp://root"}
+{"level":"info","module":"FTP Failed Login","time":"2025-06-29T21:11:20-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:11:20-07:00","message":"Login to 192.168.1.111 with testuser:ftpuser"}
+{"level":"info","module":"FTP Failed Login","time":"2025-06-29T21:11:23-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:11:23-07:00","message":"Login to 192.168.1.111 with root:ftpuser"}
+{"level":"info","module":"FTP Successful Login","time":"2025-06-29T21:11:23-07:00","message":"Login to 192.168.1.111 with ftpuser:ftpuser"}
+{"level":"info","module":"FTP File Data","time":"2025-06-29T21:11:23-07:00","message":"File Found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content First Name,Last Name,SSN,Date of Birth,Email Address,Phone Number,Address\nJane,Doe,123-45-6789,1985-06-12,jane.doe@example.com,555-234-5678,123 Maple St, Springfield, IL 62704\nJohn,Smith,987-65-4321,1990-03-05,john.smith@example.com,555-123-4567,456 Oak Ave, Denver, CO 80203\nEmily,Johnson,321-54-9876,1978-11-20,emily.johnson@example.com,555-345-6789,789 Pine Rd, Austin, TX 73301\nMichael,Brown,654-32-1987,1982-09-17,michael.brown@example.com,555-987-6543,321 Cedar Blvd, Portland, OR 97205\nSarah,Davis,432-10-5678,1995-12-01,sarah.davis@example.com,555-876-5432,654 Birch Ln, Atlanta, GA 30303\n\n"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-06-29T21:11:23-07:00","message":"Sensitive File Match Found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content: 123-45-6789"}
+{"level":"info","module":"FTP File Data","time":"2025-06-29T21:11:23-07:00","message":"File Found - Target: 192.168.1.111 Path: /post.sh | Content wget ftp://root:Thi5isaGr8Passw0rd!@192.168.1.12\n"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-06-29T21:11:23-07:00","message":"Sensitive File Match Found - Target: 192.168.1.111 Path: /post.sh | Content: ftp://root"}
+{"level":"info","module":"FTP Failed Login","time":"2025-07-12T08:20:34-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:20:34-07:00","message":"Login to 192.168.1.111 with testuser:ftpuser"}
+{"level":"info","module":"FTP Failed Login","time":"2025-07-12T08:20:37-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:20:37-07:00","message":"Login to 192.168.1.111 with root:ftpuser"}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:20:37-07:00","message":"Login to 192.168.1.111 with ftpuser:ftpuser"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-07-12T08:20:37-07:00","message":"Sensitive File Match found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content: 123-45-6789"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-07-12T08:20:37-07:00","message":"Sensitive File Match found - Target: 192.168.1.111 Path: /post.sh | Content: ftp://root"}
+{"level":"info","module":"FTP Failed Login","time":"2025-07-12T08:21:13-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:21:13-07:00","message":"Login to 192.168.1.111 with testuser:ftpuser"}
+{"level":"info","module":"FTP Failed Login","time":"2025-07-12T08:21:17-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:21:17-07:00","message":"Login to 192.168.1.111 with root:ftpuser"}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:21:17-07:00","message":"Login to 192.168.1.111 with ftpuser:ftpuser"}
+{"level":"info","module":"FTP Failed Login","time":"2025-07-12T08:22:40-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:22:40-07:00","message":"Login to 192.168.1.111 with testuser:ftpuser"}
+{"level":"info","module":"FTP Failed Login","time":"2025-07-12T08:22:44-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:22:44-07:00","message":"Login to 192.168.1.111 with root:ftpuser"}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:22:44-07:00","message":"Login to 192.168.1.111 with ftpuser:ftpuser"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-07-12T08:22:44-07:00","message":"Sensitive File Match found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content: 123-45-6789"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-07-12T08:22:44-07:00","message":"Sensitive File Match found - Target: 192.168.1.111 Path: /post.sh | Content: ftp://root"}
+{"level":"info","module":"FTP Failed Login","time":"2025-07-12T08:28:33-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:28:33-07:00","message":"Login to 192.168.1.111 with testuser:ftpuser"}
+{"level":"info","module":"FTP Failed Login","time":"2025-07-12T08:28:36-07:00","message":"530 Login incorrect."}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:28:36-07:00","message":"Login to 192.168.1.111 with root:ftpuser"}
+{"level":"info","module":"FTP Successful Login","time":"2025-07-12T08:28:36-07:00","message":"Login to 192.168.1.111 with ftpuser:ftpuser"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-07-12T08:28:36-07:00","message":"Sensitive File Match found - Target: 192.168.1.111 Path: /uploads/user_information/user_info.csv | Content: 123-45-6789"}
+{"level":"info","module":"FTP Sensitive File Found","time":"2025-07-12T08:28:36-07:00","message":"Sensitive File Match found - Target: 192.168.1.111 Path: /post.sh | Content: ftp://root"}
