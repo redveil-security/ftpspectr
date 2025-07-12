@@ -38,6 +38,8 @@ With no patterns file passed:
 
 ![](https://i.ibb.co/gFZMCbpF/2025-07-12-08-29.png)
 
+[![asciicast](https://asciinema.org/a/M0PXkaPCC4BKwd14g9oLfvpKp.svg)](https://asciinema.org/a/M0PXkaPCC4BKwd14g9oLfvpKp)
+
 ## Future Todo
 
 - [x] Implement modularity for user-supplied regexes to define what's sensitive
