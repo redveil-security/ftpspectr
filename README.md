@@ -43,3 +43,4 @@ With no patterns file passed:
 - [x] Implement modularity for user-supplied regexes to define what's sensitive
 - [ ] Implement channels for handling multiple hosts at once for large-scale inspecting 
 - [x] Log each file's contents, even if not sensitive
+- [ ] Implement way to detect *hidden* files & directories (EX: `/home/ftp/.aws/credentials`)
