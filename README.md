@@ -18,6 +18,10 @@ patterns:
 ```
 If you do not specify a regex pattern file, then it will default to hardcoded regex patterns.
 
+## Dependencies
+
+* Uses https://github.com/sajari/docconv for document conversion, must install either via Apt: `poppler-utils wv unrtf tidy` packages: `sudo apt-get install poppler-utils wv unrtf tidy` or via Brew `brew install poppler-qt5 wv unrtf tidy-html5`
+
 ## Usage
 
 `go run main.go -mode=spray -target=<singular target or target file> -username=users.txt -password=passwords.txt`
@@ -46,3 +50,4 @@ With no patterns file passed:
 - [ ] Implement channels for handling multiple hosts at once for large-scale inspecting 
 - [x] Log each file's contents, even if not sensitive
 - [ ] Implement way to detect *hidden* files & directories (EX: `/home/ftp/.aws/credentials`)
+- [ ] Implement support for office docs (~~PDF~~, DOCX, ODT, etc)

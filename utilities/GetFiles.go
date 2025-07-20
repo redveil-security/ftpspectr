@@ -6,6 +6,9 @@ import (
 	"fmt"
 	"time"
 	"io/ioutil"
+	"strings"
+	"bytes"
+	"code.sajari.com/docconv/v2"
 )
 
 func ListFiles(ipAddress string, username string, password string, configFile string) {
@@ -26,7 +29,15 @@ func ListFiles(ipAddress string, username string, password string, configFile st
 		entry := wHandle.Stat()
 		path := wHandle.Path()
 		if entry.Type == ftp.EntryTypeFile {
-			//fmt.Printf("Path: %s\n", path)
+			
+			/*
+			FUTURE TODO:
+			- [ ] TEST FILE EXTS & RUN THEM THROUGH RESPECTIVE PARSERS TO EXTRACT DATA 
+			*/
+			pathSplit := strings.Split(path, ".")
+			fileExt := pathSplit[len(pathSplit)-1] // last index to grab file ext
+						
+
 			r, err := cHandle.Retr(path)
 			if err != nil {
 				fmt.Println(err)
@@ -36,18 +47,40 @@ func ListFiles(ipAddress string, username string, password string, configFile st
 			if err != nil {
 				fmt.Println(err)
 			}
-			// Print match if one is found
-			// TODO: Maybe download file if match is found & log it to a file too?
-			matchFound, content := ExamineContents(string(buf), configFile)
-			if matchFound == true {
-				matchLogData := fmt.Sprintf("Sensitive File Match found - Target: %s Path: %s | Content: %s", ipAddress, path, content)
-				log.Info().Str("module", "FTP Sensitive File Found").Msg(matchLogData)
-				fmt.Printf("[+] Match found: Target: %s Path: %s | Content: %s\n", ipAddress, path, content)
+
+			// Extract PDF text accordingly
+			if fileExt == "pdf" {
+				reader := bytes.NewReader(buf)
+				data := ParsePDF(reader)
+				matchFound, content := ExamineContents(data, configFile)
+				if matchFound == true {
+					matchLogData := fmt.Sprintf("Sensitive File Match found - Target: %s Path: %s | Content: %s", ipAddress, path, content)
+					log.Info().Str("module", "FTP Sensitive File Found").Msg(matchLogData)
+					fmt.Printf("[+] Match found: Target: %s Path: %s | Content: %s\n", ipAddress, path, content)
+				}
+				r.Close()
+			} else {
+				// Print match if one is found
+				// TODO: Maybe download file if match is found & log it to a file too?
+				matchFound, content := ExamineContents(string(buf), configFile)
+				if matchFound == true {
+					matchLogData := fmt.Sprintf("Sensitive File Match found - Target: %s Path: %s | Content: %s", ipAddress, path, content)
+					log.Info().Str("module", "FTP Sensitive File Found").Msg(matchLogData)
+					fmt.Printf("[+] Match found: Target: %s Path: %s | Content: %s\n", ipAddress, path, content)
+				}
+				r.Close()
 			}
-			r.Close()
 		}
 	}
 	
 	cHandle.Quit()
 
+}
+
+func ParsePDF(buffer *bytes.Reader) string {
+	res, _, err := docconv.ConvertPDF(buffer)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return res
 }
