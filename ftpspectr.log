@@ -1,7 +1,0 @@
-{"level":"info","module":"FTP Failed Login","time":"2025-07-20T09:52:27-07:00","message":"530 Login incorrect."}
-{"level":"info","module":"FTP Successful Login","time":"2025-07-20T09:52:27-07:00","message":"Login to 192.168.1.111 with testuser:ftpuser"}
-{"level":"info","module":"FTP Failed Login","time":"2025-07-20T09:52:30-07:00","message":"530 Login incorrect."}
-{"level":"info","module":"FTP Successful Login","time":"2025-07-20T09:52:30-07:00","message":"Login to 192.168.1.111 with root:ftpuser"}
-{"level":"info","module":"FTP Successful Login","time":"2025-07-20T09:52:30-07:00","message":"Login to 192.168.1.111 with ftpuser:ftpuser"}
-{"level":"info","module":"FTP Sensitive File Found","time":"2025-07-20T09:52:30-07:00","message":"Sensitive File Match found - Target: 192.168.1.111 Path: /testing/ssn.txt | Content: 001-09-0100"}
-{"level":"info","module":"FTP Sensitive File Found","time":"2025-07-20T09:52:30-07:00","message":"Sensitive File Match found - Target: 192.168.1.111 Path: /SENSITIVE.pdf | Content: 001-22-0003"}
