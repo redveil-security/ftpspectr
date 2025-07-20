@@ -48,7 +48,45 @@ func ListFiles(ipAddress string, username string, password string, configFile st
 				fmt.Println(err)
 			}
 
-			// Extract PDF text accordingly
+			/*
+			TESTING - MAPPING FUNCTIONS TO FILE EXTS TO EASILY SWITCH BETWEEN WHAT FUNC TO CALL BASED ON EXT
+			*/
+			fMapping := map[string]interface{} {
+				"pdf": ParsePDF,	
+				"odt": ParseODT,
+			}
+
+			data := ""
+			// To avoid a repeating if & else statement for parsing office-related files
+			for k, v := range fMapping {
+				if k == fileExt {
+					reader := bytes.NewReader(buf)
+					data = v.(func(*bytes.Reader) string)(reader)
+					matchFound, content := ExamineContents(data, configFile)
+					if matchFound == true {
+						matchLogData := fmt.Sprintf("Sensitive File Match found - Target: %s Path: %s | Content: %s", ipAddress, path, content)
+						log.Info().Str("module", "FTP Sensitive File Found").Msg(matchLogData)
+						fmt.Printf("[+] Match found: Target: %s Path: %s | Content: %s\n", ipAddress, path, content)
+					}
+				}
+			}
+			if len(data) == 0 {
+				// fileExt wasn't found in mapping so continue parsing as if it doesn't need special parsing
+				matchFound, content := ExamineContents(string(buf), configFile)
+				if matchFound == true {
+					matchLogData := fmt.Sprintf("Sensitive File Match found - Target: %s Path: %s | Content: %s", ipAddress, path, content)
+					log.Info().Str("module", "FTP Sensitive File Found").Msg(matchLogData)
+					fmt.Printf("[+] Match found: Target: %s Path: %s | Content: %s\n", ipAddress, path, content)
+				}
+			}
+
+
+			r.Close()
+
+
+			
+			/*
+			OLD METHOD FOR PARSING SPECIAL & NON-SPECIAL FILES
 			if fileExt == "pdf" {
 				reader := bytes.NewReader(buf)
 				data := ParsePDF(reader)
@@ -69,7 +107,7 @@ func ListFiles(ipAddress string, username string, password string, configFile st
 					fmt.Printf("[+] Match found: Target: %s Path: %s | Content: %s\n", ipAddress, path, content)
 				}
 				r.Close()
-			}
+			}*/
 		}
 	}
 	
@@ -77,8 +115,20 @@ func ListFiles(ipAddress string, username string, password string, configFile st
 
 }
 
+
+/*
+TODO: Instead of printing errors, log them instead
+*/
 func ParsePDF(buffer *bytes.Reader) string {
 	res, _, err := docconv.ConvertPDF(buffer)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return res
+}
+
+func ParseODT(buffer *bytes.Reader) string {
+	res, _, err := docconv.ConvertODT(buffer)
 	if err != nil {
 		fmt.Println(err)
 	}
