@@ -50,4 +50,4 @@ With no patterns file passed:
 - [ ] Implement channels for handling multiple hosts at once for large-scale inspecting 
 - [x] Log each file's contents, even if not sensitive
 - [ ] Implement way to detect *hidden* files & directories (EX: `/home/ftp/.aws/credentials`)
-- [ ] Implement support for office docs (~~PDF~~, DOCX, ODT, etc)
+- [ ] Implement support for office docs (~~PDF~~, DOCX, ~~ODT~~, etc)
